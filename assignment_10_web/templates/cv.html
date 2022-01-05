@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    <link rel="stylesheet" href="static/cv.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <script src="static/cv.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="container">
+        <div id="header">
+            <h1 for="">My CV: </h1>
+            <button onclick="print_my_name()">Full name</button>
+            <h3 class="intro">Phone number: 05477777888</h3>
+            <h3 class="intro">Mail: niv2@post.bgu.ac.il</h3>
+        </div>
+
+            <div id="summary" >
+                <h3>Summary</h3>
+                <h4>Industrial and Management Engineering student with one year left to graduation. </h4>
+                <h4>High level of computer knowledge (including Office, VBA, Internet etc.) </h4>
+                <h4>Current GPA: 1000 </label>
+            </div>
+
+            <div id="education">
+                <h3>Education info:</h3>
+                <h4>2018-PRESENT: 4th year Industrial and Management Engineering student in Ben-Gurion University.</h4>
+                <h4>2010-2013:High school education- full matriculation including 5 units in Math, Physics and Business Management. </h4>
+            </div>
+
+            <div id="military">
+                <h3>Military service 2013-2016:</h3>
+                <h4>Served as tank commander in Armoured Corps ("Shirion") in an operational regiment.</h4>
+                <h4><span>&#183;</span>Role included responsibility, loyalty and mission understanding.</h4>
+                <h4>Ability to withstand extreme conditions and stressful situations. </h4>
+            </div>
+
+            <div id="languages">
+                <h3>Languages:</h3>
+                <h4 id="bodyLan"><span>&#183;</span>Hebrew (native) <br /><span>&#183;</span> English (high level)</h4>
+            </div>
+
+            <div class="contact_me">
+                <h2>Contact Me</h2>
+                <form id="contact_me" onSubmit = "return check_validiation(this)">
+                    <label for="phone_number">phone number</label>
+                    <input id="phone_number" ></input>
+                    <br>
+                    <label for="email">email</label>
+                    <input id="email" type="email">
+                    <br />
+                    <label for="Message">Message</label>
+                    <textarea id="Message" cols="25" rows="3"></textarea>
+                    <br>
+                    <input class="submit" type="submit" id="submit" value="Submit" >
+                </form>
+
+            </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,98 @@
+:root {
+    --color1: rgb(0, 117, 146);
+    --color2: rgb(168, 255, 255);
+    --color3: #5f9ea0;
+    --color4: rgb(238, 255, 0);
+
+}
+
+
+body {
+    background-color: var(--color1);
+    box-sizing      : border-box;
+    margin: 0%;
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'summary summary summary'
+        'education military languages'
+        'education military languages'
+        'contact contact contact';
+    text-align-last: center;
+}
+
+@media only screen and (max-width: 1000px){
+    body {
+        background-color: var(--color2);
+    }
+}
+
+#header {
+    text-align: center;
+    grid-area: header;
+    background-color: var(--color4);
+    padding: 20px;
+    margin: 30px;
+}
+
+#summary {
+    text-align: center;
+    grid-area: summary;
+    background-color: var(--color3);
+    padding: 25px;
+    margin: 25px;
+}
+
+#education {
+    text-align: center;
+    grid-area: education;
+    background-color: var(--color3);
+    padding: 20px;
+    margin: 30px;
+}
+
+#military {
+    text-align: left;
+    grid-area: military;
+    background-color: var(--color3);
+    padding: 20px;
+    margin: 30px;
+}
+
+#languages {
+    text-align: center;
+    grid-area: languages;
+    display: grid;
+    background-color: var(--color3);
+    padding: 20px;
+    margin: 30px;
+}
+
+.contact_me{
+    text-align: center;
+    grid-area: contact;
+    background-color: var(--color3);
+    padding: 20px;
+    margin: 30px;
+}
+
+
+  @keyframes blinking {
+      0%{
+          color: #fbff04;
+      }
+      100%{
+
+        color:#0826cc
+      }
+  }
+
+
+  button {
+      animation-name: blinking;
+      animation-duration: 2s;
+      animation-iteration-count: 7;
+  } 

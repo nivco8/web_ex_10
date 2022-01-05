@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title%}
+<title>Additional Details</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>Wanna know more?</h1>
+    <div id="degrees">
+        <h3>Degrees: {{ degrees | default('None', true) | capitalize() }}</h3>
+    </div>
+
+    <div id="visited_places">
+        <h3>Visited places:</h3>
+        {% for place in visited_places %}
+            <li>{{ place | upper() | replace(" " , "-")}}</li>
+        {% endfor %}
+    </div>
+
+    <div id="hobbies">
+        <h3>Hobbies: {{ hobbies | join(', ') | upper() }}</h3>
+    </div>
+
+
+    <div id="like_the_course">
+        {% if not like_the_course %}
+            {{ super() }}
+        {% endif %}
+    </div>
+
+{% endblock %}

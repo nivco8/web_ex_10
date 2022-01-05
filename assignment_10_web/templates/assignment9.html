@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    <link rel="stylesheet" href="static/assignment9.css">
+    <title>assignment9</title>
+{% endblock %}
+
+{% block content %}
+    <div id="container">
+        <div id="header">
+            <h1 for="">Forms page: </h1>
+        </div>
+        <div id="search" >
+                <form action ="/assignment9" method="GET">
+                    <h3>SEARCH FORM</h3>
+                    First name/Last name/Email to search:<input name="search_key">
+                    <input type="submit" id="sub">
+                </form>
+        </div>
+
+        <div id="results">
+            <h3>SEARCH RESULTS</h3>
+            {% if matches_list %}
+                {% for user in matches_list %}
+                    {{ user }}
+                    <br>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div id="registration" >
+                {% if session %}
+                    Nice to see you, {{ nick_name }}
+                    <form method="GET" action="/logout">
+                    <input type="submit" name="Log Out" value="Log Out">
+                    </form>
+                {% else %}
+                    <form action ="/assignment9" method="POST">
+                    <h3>REGISTRATION FORM</h3>
+                    First name: <input name="first" type="text">
+                    Last name: <input name="last" type="text">
+                    Nick name: <input required=True name="nickname" type="text">
+                    Email: <input name="email" type="text">
+                    Password: <input name="password" type="password">
+                    <input type="submit" id="sub">
+                    </form>
+                {% endif %}
+        </div>
+    </div>
+{% endblock %}

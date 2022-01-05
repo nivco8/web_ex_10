@@ -1,0 +1,6 @@
+<header>
+    <a href = "/" >Home</a> | <a href = "/assignment8">About</a> | <a href = "/assignment9">Forms</a> | <a href="/assignment10">assignment10</a>
+    {% if session.nickname %}
+        <h5>Nice to see you, {{ session.nick_name}}</h5>
+    {% endif %}
+</header>
